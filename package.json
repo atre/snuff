@@ -1,0 +1,51 @@
+{
+  "name": "snuff",
+  "version": "0.2.0",
+  "description": "Definition-of-done runner — one command, all quality gates, a compact pass/fail matrix",
+  "type": "module",
+  "bin": {
+    "snuff": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "prestart": "npm run build",
+    "prepack": "npm run build",
+    "prepublishOnly": "npm run build",
+    "prelink": "npm run build",
+    "test": "tsc -p tsconfig.test.json && node --test test-dist/test/**/*.test.js",
+    "lint": "tsc --noEmit"
+  },
+  "keywords": [
+    "quality-gate",
+    "verification",
+    "ci",
+    "checks",
+    "definition-of-done",
+    "cli",
+    "ai",
+    "claude"
+  ],
+  "license": "MIT",
+  "author": "Mykyta Herashchenko",
+  "files": [
+    "dist",
+    "skills"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atre/snuff.git"
+  },
+  "homepage": "https://github.com/atre/snuff#readme",
+  "bugs": {
+    "url": "https://github.com/atre/snuff/issues"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "typescript": "^5.9.3"
+  }
+}
